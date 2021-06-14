@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.thymeleaf.org
-http://www.thymeleaf.org ">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -18,33 +16,34 @@ http://www.thymeleaf.org ">
   <div class="card">
     <div class="card-body">
       <div class="col-md-10">
-        <form action="#" method="post" th:action="@{/createStudent}"
-              th:object="${student}">
-          <div class="row">
+        <form action="#"
+              th:action="@{/update/{id}(id=${student.id})}"
+              th:object="${student}"
+              method="post">
             <div class="form-group col-md-8">
               <label for="userName" class="col-form-label">First Name</label>
               <input type="text" th:field="*{userName}" class="form-control"
-                     id="userName" placeholder="First Name"/>
+                     id="userName" placeholder="First Name" />
             </div>
             <div class="form-group col-md-8">
               <label for="surname" class="col-form-label">Last Name</label>
               <input type="text" th:field="*{surname}" class="form-control"
-                     id="surName" placeholder="Last Name"/>
+                     id="surName" placeholder="Last Name" />
             </div>
             <div class="form-group col-md-8">
               <label for="height" class="col-form-label">Height</label>
               <input type="text" th:field="*{height}" class="form-control"
-                     id="height" placeholder="Height"/>
+                     id="height" placeholder="Height" />
             </div>
             <div class="form-group col-md-8">
               <label for="age" class="col-form-label">Age</label>
               <input type="text" th:field="*{age}" class="form-control"
-                     id="age" placeholder="Height"/>
+                     id="age" placeholder="Height" />
             </div>
             <div class="form-group col-md-8">
               <label for="stdayer" class="col-form-label">Year Of Studies</label>
               <input type="text" th:field="*{stdyear}" class="form-control"
-                     id="stdayer" placeholder="Height"/>
+                     id="stdayer" placeholder="Height" />
             </div>
             <div class="col-md-6">
               <input type="submit" class="btn btn-primary" value=" Submit ">
@@ -52,7 +51,6 @@ http://www.thymeleaf.org ">
 
             <input type="hidden" id="id" th:field="*{id}">
 
-          </div>
         </form>
       </div>
     </div>
